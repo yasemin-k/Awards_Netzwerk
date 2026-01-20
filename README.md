@@ -59,7 +59,7 @@ konkreten Award-Ereignis in einem bestimmten Jahr.
 | `target` | Award-Ereignis inkl. Jahr (z. B. *Oscars 2024*) |
 | `year` | Jahr des Award-Ereignisses (Filtervariable) |
 | `award` | Art der Auszeichnung (*Oscars*, *Emmys*, *Golden Globe*) |
-| `weight` | Anzahl der Nominierungen oder Auszeichnungen |
+| `weight` | 1= nominiert, 2= gewonnen |
 
 ---
 
