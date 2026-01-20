@@ -60,6 +60,7 @@ konkreten Award-Ereignis in einem bestimmten Jahr.
 | `year` | Jahr des Award-Ereignisses (Filtervariable) |
 | `award` | Art der Auszeichnung (*Oscars*, *Emmys*, *Golden Globe*) |
 | `weight` | 1= nominiert, 2= gewonnen |
+| `category` | Nominierungs-/Gewinnkategorie |
 
 ---
 
@@ -73,8 +74,9 @@ Die Node-Liste enthält Metadaten zu allen Knoten im Netzwerk.
 |--------|--------------|
 | `id` | Eindeutige Kennung des Knotens |
 | `type` | Knotentyp (*Person* oder *AwardEvent*) |
-| `label` | Anzeigename des Knotens |
-
+| `sex` | Anzeigename des Knotens |
+| `year of birth` | Geburtsjahr, zum Filtern nach Altersgruppen |
+| `ethnicity` | Ethnische Herkunft, zum Filtern nach Diversität |
 ---
 
 ## Modellierungsentscheidungen
@@ -91,8 +93,8 @@ Die Node-Liste enthält Metadaten zu allen Knoten im Netzwerk.
 ## Verwendung in Palladio
 
 - `edges.csv` wird als Network/Graph geladen
-- `source` = Source Node
-- `target` = Target Node
+- `from` = Source Node
+- `to` = Target Node
 - `weight` kann als Edge Weight genutzt werden
 - `year` dient der zeitlichen Filterung
 - `nodes.csv` kann optional ergänzt werden, um Knotentypen zu unterscheiden
