@@ -1,0 +1,156 @@
+id,type,sex,ethnicity,year of birth
+Emmys,AwardEvent,female,,NA
+Golden Globe,AwardEvent,female,,NA
+Oscars,AwardEvent,female,,NA
+Abby Elliott,Person,female,White,1987
+Aja Naomi King,Person,female,Black,1985
+Alana Haim,Person,female,White,1991
+Alex Borstein,Person,female,White,1971
+Alexandra Daddario,Person,female,White,1986
+Ali Wong,Person,female,Asian,1982
+Alma Pöysti,Person,female,White,1981
+Amanda Seyfried,Person,female,White,1985
+America Ferrera,Person,female,Latina,1984
+Ana de Armas,Person,female,Latina,1988
+Andie MacDowell,Person,female,White,1958
+Andrea Riseborough,Person,female,White,1981
+Angela Bassett,Person,female,Black,1958
+Anna Sawai,Person,female,Asian,1992
+Annaleigh Ashford,Person,female,White,1985
+Annette Bening,Person,female,White,1958
+Anya Taylor-Joy,Person,female,White,1996
+Ariana DeBose,Person,female,Afro_Latina,1991
+Aubrey Plaza,Person,female,White_Latina,1984
+Aunjanue Ellis,Person,female,Black ,1969
+Ayo Edebiri,Person,female,Black,1995
+Bella Ramsey,Person,female,White ,2003
+Brie Larson,Person,female,White,1989
+Cailee Spaeny,Person,female,White,1998
+Caitriona Balfe,Person,female,White,1979
+Camila Morrone,Person,female,White,1997
+Carey Mulligan,Person,female,White,1985
+Carol Burnett,Person,female,White,1933
+Carrie Coon,Person,female,White,1981
+Cate Blanchett,Person,female,White,1969
+Christina Applegate,Person,female,White,1971
+Christina Ricci,Person,female,White,1980
+Christine Baranski,Person,female,White,1952
+Claire Danes,Person,female,White,1979
+Connie Britton,Person,female,White,1967
+Cynthia Erivo,Person,female,Black,1987
+Da’Vine Joy Randolph,Person,female,Black,1986
+Daisy Edgar-Jones,Person,female,White,1998
+Dakota Fanning,Person,female,White,1994
+Danielle Brooks,Person,female,Black,1989
+Diane Lane,Person,female,White,1965
+Dolly de Leon,Person,female,Asian,1969
+Dominique Fishback,Person,female,Black,1991
+Elisabeth Moss,Person,female,White,1982
+Elizabeth Debicki,Person,female,White,1990
+Elizabeth Olsen,Person,female,White ,1989
+Elle Fanning,Person,female,White,1998
+Emily Blunt,Person,female,White,1983
+Emma D’Arcy,Person,female,White,1992
+Emma Stone,Person,female,White,1988
+Emma Thompson,Person,female,White,1959
+Fantasia Barrino,Person,female,Black,1984
+Greta Lee,Person,female,Asian ,1983
+Hannah Einbinder,Person,female,White,1995
+Hannah Waddingham,Person,female,White,1974
+Helen Mirren,Person,female,White,1945
+Hilary Swank,Person,female,White,1974
+Holland Taylor,Person,female,White,1943
+Hong Chau,Person,female,Asian,1979
+Imelda Staunton,Person,female,White,1956
+Issa Rae,Person,female,Black,1985
+J. Smith-Cameron,Person,female,White,1957
+Jamie Lee Curtis,Person,female,White,1958
+Janelle James,Person,female,Black,1979
+Jean Smart,Person,female,White,1951
+Jenna Ortega,Person,female,Latina,2002
+Jennifer Aniston,Person,female,White,1969
+Jennifer Coolidge,Person,female,White,1961
+Jennifer Lawrence,Person,female,White,1990
+Jessica Chastain,Person,female,White,1977
+Jessica Gunning,Person,female,White,1986
+Jessica Williams,Person,female,Black,1989
+Jessie Buckley,Person,female,White,1989
+Jodie Comer,Person,female,White,1993
+Jodie Foster,Person,female,White,1962
+Judi Dench,Person,female,White,1934
+Julia Garner,Person,female,White,1994
+Julia Roberts,Person,female,White,1965
+Julianne Moore,Person,female,White,1960
+Juliette Lewis,Person,female,White,1973
+Jung Ho-yeon,Person,female,Asian,1994
+Juno Temple,Person,female,White,1989
+Kaitlyn Dever,Person,female,White,1996
+Kaley Cuoco,Person,female,White,1985
+Karen Pittman,Person,female,Black,1986
+Kate McKinnon,Person,female,White,1984
+Kate Winslet,Person,female,White,1975
+Kathryn Hahn,Person,female,White,1973
+Keri Russell,Person,female,White,1976
+Kerry Condon,Person,female,White,1983
+Kirsten Dunst,Person,female,White,1982
+Kristen Stewart,Person,female,White,1990
+Kristen Wiig,Person,female,White,1973
+Lady Gaga,Person,female,White,1986
+Laura Linney,Person,female,White,1964
+Lesley Manville,Person,female,White,1956
+Lily Gladstone,Person,female,Indigenous,1986
+Lily James,Person,female,White,1989
+Liza Colón-Zayas,Person,female,Latina,1973
+Lizzy Caplan,Person,female,White,1982
+Mare Winningham,Person,female,White,1959
+Margaret Qualley,Person,female,White,1994
+Margot Robbie,Person,female,White,1990
+Maria Bello,Person,female,White,1967
+Marion Cotillard,Person,female,White,1975
+Maya Erskine,Person,female,Asian_White ,1987
+Maya Rudolph,Person,female,Black_Mixed,1972
+Meghann Fahy,Person,female,White ,1990
+Melanie Lynskey,Person,female,White,1977
+Merritt Wever,Person,female,White,1980
+Meryl Streep,Person,female,White,1946
+Michaela Jaé Rodriguez,Person,female,Latina,1991
+Michelle Williams,Person,female,White,1980
+Michelle Yeoh,Person,female,Asian,1962
+Naomi Watts,Person,female,White,1968
+Natalie Portman,Person,female,White,1981
+Natasha Lyonne,Person,female,Black,1979
+Natasha Rothwell,Person,female,Black,1980
+Nava Mau,Person,female,Latina ,1992
+Nicole Beharie,Person,female,Black ,1985
+Nicole Kidman,Person,female,White ,1967
+Niecy Nash-Betts,Person,female,Black,1970
+Olivia Colman,Person,female,White,1974
+Patricia Arquette,Person,female,White,1968
+Penélope Cruz,Person,female,Latina,1974
+Quinta Brunson,Person,female,Black,1989
+Rachel Brosnahan,Person,female,White,1990
+Rachel Weisz,Person,female,White ,1970
+Rachel Zegler,Person,female,Latina,2001
+Reese Witherspoon,Person,female,White,1976
+Rhea Seehorn,Person,female,White,1972
+Riley Keough,Person,female,White,1989
+Rosamund Pike,Person,female,White,1979
+Ruth Negga,Person,female,Black_Mixed,1982
+Sabrina Impacciatore,Person,female,White,1968
+Sandra Hüller,Person,female,White,1978
+Sandra Oh,Person,female,Asian,1971
+Sarah Niles,Person,female,Black,1987
+Sarah Paulson,Person,female,White,1974
+Sarah Snook,Person,female,White,1987
+Selena Gomez,Person,female,Latina,1992
+Sharon Horgan,Person,female,White,1970
+Sheryl Lee Ralph,Person,female,Black,1956
+Simona Tabasco,Person,female,White,1994
+Sofía Vergara,Person,female,Latina,1972
+Stephanie Hsu,Person,female,Asian,1990
+Sydney Sweeney,Person,female,White,1997
+Toni Collette,Person,female,White,1972
+Tracee Ellis Ross,Person,female,Black,1972
+Uzo Aduba,Person,female,Black,1981
+Viola Davis,Person,female,Black,1965
+Zendaya,Person,female,Black_Mixed,1996
