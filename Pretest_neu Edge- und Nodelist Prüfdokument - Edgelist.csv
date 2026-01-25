@@ -1,0 +1,258 @@
+from,to,year,award,weight,category
+Emma Stone,Oscars,2024,Oscars,2,acting
+Annette Bening,Oscars,2024,Oscars,1,acting
+Lily Gladstone,Oscars,2024,Oscars,1,acting
+Sandra Hüller,Oscars,2024,Oscars,1,acting
+Carey Mulligan,Oscars,2024,Oscars,1,acting
+Da'Vine Joy Randolph,Oscars,2024,Oscars,2,acting
+Emily Blunt,Oscars,2024,Oscars,1,acting
+Danielle Brooks,Oscars,2024,Oscars,1,acting
+America Ferrera,Oscars,2024,Oscars,1,acting
+Jodie Foster,Oscars,2024,Oscars,1,acting
+Michelle Yeoh,Oscars,2023,Oscars,2,acting
+Cate Blanchett,Oscars,2023,Oscars,1,acting
+Ana de Armas,Oscars,2023,Oscars,1,acting
+Andrea Riseborough,Oscars,2023,Oscars,1,acting
+Michelle Williams,Oscars,2023,Oscars,1,acting
+Jamie Lee Curtis,Oscars,2023,Oscars,2,acting
+Angela Bassett,Oscars,2023,Oscars,1,acting
+Hong Chau,Oscars,2023,Oscars,1,acting
+Kerry Condon,Oscars,2023,Oscars,1,acting
+Stephanie Hsu,Oscars,2023,Oscars,1,acting
+Jessica Chastain,Oscars,2022,Oscars,2,acting
+Olivia Colman,Oscars,2022,Oscars,1,acting
+Penélope Cruz,Oscars,2022,Oscars,1,acting
+Nicole Kidman,Oscars,2022,Oscars,1,acting
+Kristen Stewart,Oscars,2022,Oscars,1,acting
+Ariana DeBose,Oscars,2022,Oscars,2,acting
+Jessie Buckley,Oscars,2022,Oscars,1,acting
+Judi Dench,Oscars,2022,Oscars,1,acting
+Kirsten Dunst,Oscars,2022,Oscars,1,acting
+Aunjanue Ellis,Oscars,2022,Oscars,1,acting
+Anna Sawai,Emmys,2024,Emmys,2,acting
+Jennifer Aniston,Emmys,2024,Emmys,1,acting
+Carrie Coon,Emmys,2024,Emmys,1,acting
+Maya Erskine,Emmys,2024,Emmys,1,acting
+Imelda Staunton,Emmys,2024,Emmys,1,acting
+Reese Witherspoon,Emmys,2024,Emmys,1,acting
+Jean Smart,Emmys,2024,Emmys,2,acting
+Quinta Brunson,Emmys,2024,Emmys,1,acting
+Ayo Edebiri,Emmys,2024,Emmys,1,acting
+Selena Gomez,Emmys,2024,Emmys,1,acting
+Maya Rudolph,Emmys,2024,Emmys,1,acting
+Kristen Wiig,Emmys,2024,Emmys,1,acting
+Jodie Foster,Emmys,2024,Emmys,2,acting
+Brie Larson,Emmys,2024,Emmys,1,acting
+Juno Temple,Emmys,2024,Emmys,1,acting
+Sofía Vergara,Emmys,2024,Emmys,1,acting
+Naomi Watts,Emmys,2024,Emmys,1,acting
+Elizabeth Debicki,Emmys,2024,Emmys,2,acting
+Christine Baranski,Emmys,2024,Emmys,1,acting
+Nicole Beharie,Emmys,2024,Emmys,1,acting
+Greta Lee,Emmys,2024,Emmys,1,acting
+Lesley Manville,Emmys,2024,Emmys,1,acting
+Karen Pittman,Emmys,2024,Emmys,1,acting
+Holland Taylor,Emmys,2024,Emmys,1,acting
+Liza Colón-Zayas,Emmys,2024,Emmys,2,acting
+Carol Burnett,Emmys,2024,Emmys,1,acting
+Hannah Einbinder,Emmys,2024,Emmys,1,acting
+Janelle James,Emmys,2024,Emmys,1,acting
+Sheryl Lee Ralph,Emmys,2024,Emmys,1,acting
+Meryl Streep,Emmys,2024,Emmys,1,acting
+Jessica Gunning,Emmys,2024,Emmys,2,acting
+Dakota Fanning,Emmys,2024,Emmys,1,acting
+Lily Gladstone,Emmys,2024,Emmys,1,acting
+Aja Naomi King,Emmys,2024,Emmys,1,acting
+Diane Lane,Emmys,2024,Emmys,1,acting
+Nava Mau,Emmys,2024,Emmys,1,acting
+Sarah Snook,Emmys,2023,Emmys,2,acting
+Sharon Horgan,Emmys,2023,Emmys,1,acting
+Melanie Lynskey,Emmys,2023,Emmys,1,acting
+Elisabeth Moss,Emmys,2023,Emmys,1,acting
+Bella Ramsey,Emmys,2023,Emmys,1,acting
+Keri Russell,Emmys,2023,Emmys,1,acting
+Quinta Brunson,Emmys,2023,Emmys,2,acting
+Christina Applegate,Emmys,2023,Emmys,1,acting
+Rachel Brosnahan,Emmys,2023,Emmys,1,acting
+Natasha Lyonne,Emmys,2023,Emmys,1,acting
+Jenna Ortega,Emmys,2023,Emmys,1,acting
+Ali Wong,Emmys,2023,Emmys,2,acting
+Lizzy Caplan,Emmys,2023,Emmys,1,acting
+Jessica Chastain,Emmys,2023,Emmys,1,acting
+Dominique Fishback,Emmys,2023,Emmys,1,acting
+Kathryn Hahn,Emmys,2023,Emmys,1,acting
+Riley Keough,Emmys,2023,Emmys,1,acting
+Jennifer Coolidge,Emmys,2023,Emmys,2,acting
+Elizabeth Debicki,Emmys,2023,Emmys,1,acting
+Meghann Fahy,Emmys,2023,Emmys,1,acting
+Sabrina Impacciatore,Emmys,2023,Emmys,1,acting
+Aubrey Plaza,Emmys,2023,Emmys,1,acting
+Rhea Seehorn,Emmys,2023,Emmys,1,acting
+J. Smith-Cameron,Emmys,2023,Emmys,1,acting
+Simona Tabasco,Emmys,2023,Emmys,1,acting
+Ayo Edebiri,Emmys,2023,Emmys,2,acting
+Alex Borstein,Emmys,2023,Emmys,1,acting
+Janelle James,Emmys,2023,Emmys,1,acting
+Sheryl Lee Ralph,Emmys,2023,Emmys,1,acting
+Juno Temple,Emmys,2023,Emmys,1,acting
+Hannah Waddingham,Emmys,2023,Emmys,1,acting
+Jessica Williams,Emmys,2023,Emmys,1,acting
+Niecy Nash-Betts,Emmys,2023,Emmys,2,acting
+Annaleigh Ashford,Emmys,2023,Emmys,1,acting
+Maria Bello,Emmys,2023,Emmys,1,acting
+Claire Danes,Emmys,2023,Emmys,1,acting
+Juliette Lewis,Emmys,2023,Emmys,1,acting
+Camila Morrone,Emmys,2023,Emmys,1,acting
+Merritt Wever,Emmys,2023,Emmys,1,acting
+Lily Gladstone,Golden Globe,2024,Golden Globe,2,acting
+Annette Bening,Golden Globe,2024,Golden Globe,1,acting
+Cailee Spaeny,Golden Globe,2024,Golden Globe,1,acting
+Carey Mulligan,Golden Globe,2024,Golden Globe,1,acting
+Greta Lee,Golden Globe,2024,Golden Globe,1,acting
+Sandra Hüller,Golden Globe,2024,Golden Globe,1,acting
+Emma Stone,Golden Globe,2024,Golden Globe,2,acting
+Alma Pöysti,Golden Globe,2024,Golden Globe,1,acting
+Fantasia Barrino,Golden Globe,2024,Golden Globe,1,acting
+Jennifer Lawrence,Golden Globe,2024,Golden Globe,1,acting
+Margot Robbie,Golden Globe,2024,Golden Globe,1,acting
+Natalie Portman,Golden Globe,2024,Golden Globe,1,acting
+Da’Vine Joy Randolph,Golden Globe,2024,Golden Globe,2,acting
+Danielle Brooks,Golden Globe,2024,Golden Globe,1,acting
+Emily Blunt,Golden Globe,2024,Golden Globe,1,acting
+Jodie Foster,Golden Globe,2024,Golden Globe,1,acting
+Julianne Moore,Golden Globe,2024,Golden Globe,1,acting
+Rosamund Pike,Golden Globe,2024,Golden Globe,1,acting
+Sarah Snook,Golden Globe,2024,Golden Globe,2,acting
+Keri Russell,Golden Globe,2024,Golden Globe,1,acting
+Imelda Staunton,Golden Globe,2024,Golden Globe,2,acting
+Helen Mirren,Golden Globe,2024,Golden Globe,1,acting
+Bella Ramsey,Golden Globe,2024,Golden Globe,1,acting
+Ayo Edebiri,Golden Globe,2024,Golden Globe,2,acting
+Elle Fanning,Golden Globe,2024,Golden Globe,1,acting
+Natasha Lyonne,Golden Globe,2024,Golden Globe,1,acting
+Quinta Brunson,Golden Globe,2024,Golden Globe,1,acting
+Rachel Brosnahan,Golden Globe,2024,Golden Globe,1,acting
+Selena Gomez,Golden Globe,2024,Golden Globe,1,acting
+Ali Wong,Golden Globe,2024,Golden Globe,2,acting
+Brie Larson,Golden Globe,2024,Golden Globe,1,acting
+Elizabeth Olsen,Golden Globe,2024,Golden Globe,1,acting
+Juno Temple,Golden Globe,2024,Golden Globe,1,acting
+Rachel Weisz,Golden Globe,2024,Golden Globe,1,acting
+Riley Keough,Golden Globe,2024,Golden Globe,1,acting
+Elizabeth Debicki,Golden Globe,2024,Golden Globe,2,acting
+Christina Ricci,Golden Globe,2024,Golden Globe,1,acting
+Abby Elliott,Golden Globe,2024,Golden Globe,1,acting
+Hannah Waddingham,Golden Globe,2024,Golden Globe,1,acting
+J. Smith-Cameron,Golden Globe,2024,Golden Globe,1,acting
+Meryl Streep,Golden Globe,2024,Golden Globe,1,acting
+Cate Blanchett,Golden Globe,2023,Golden Globe,2,acting
+Ana de Armas,Golden Globe,2023,Golden Globe,1,acting
+Michelle Williams,Golden Globe,2023,Golden Globe,1,acting
+Olivia Colman,Golden Globe,2023,Golden Globe,1,acting
+Viola Davis,Golden Globe,2023,Golden Globe,1,acting
+Michelle Yeoh,Golden Globe,2023,Golden Globe,2,acting
+Anya Taylor-Joy,Golden Globe,2023,Golden Globe,1,acting
+Emma Thompson,Golden Globe,2023,Golden Globe,1,acting
+Lesley Manville,Golden Globe,2023,Golden Globe,1,acting
+Margot Robbie,Golden Globe,2023,Golden Globe,1,acting
+Jennifer Coolidge,Golden Globe,2023,Golden Globe,2,acting
+Niecy Nash-Betts,Golden Globe,2023,Golden Globe,1,acting
+Daisy Edgar-Jones,Golden Globe,2023,Golden Globe,2,acting
+Julia Garner,Golden Globe,2023,Golden Globe,2,acting
+Sheryl Lee Ralph,Golden Globe,2023,Golden Globe,1,acting
+Janelle James,Golden Globe,2023,Golden Globe,1,acting
+Hannah Einbinder,Golden Globe,2023,Golden Globe,1,acting
+Elizabeth Debicki,Golden Globe,2023,Golden Globe,1,acting
+Angela Bassett,Golden Globe,2023,Golden Globe,2,acting
+Carey Mulligan,Golden Globe,2023,Golden Globe,1,acting
+Dolly de Leon,Golden Globe,2023,Golden Globe,1,acting
+Jamie Lee Curtis,Golden Globe,2023,Golden Globe,1,acting
+Kerry Condon,Golden Globe,2023,Golden Globe,1,acting
+Quinta Brunson,Golden Globe,2023,Golden Globe,2,acting
+Selena Gomez,Golden Globe,2023,Golden Globe,1,acting
+Kaley Cuoco,Golden Globe,2023,Golden Globe,1,acting
+Jenna Ortega,Golden Globe,2023,Golden Globe,1,acting
+Jean Smart,Golden Globe,2023,Golden Globe,1,acting
+Amanda Seyfried,Golden Globe,2023,Golden Globe,2,acting
+Jessica Chastain,Golden Globe,2023,Golden Globe,1,acting
+Julia Roberts,Golden Globe,2023,Golden Globe,1,acting
+Lily James,Golden Globe,2023,Golden Globe,1,acting
+Zendaya,Golden Globe,2023,Golden Globe,2,acting
+Laura Linney,Golden Globe,2023,Golden Globe,1,acting
+Imelda Staunton,Golden Globe,2023,Golden Globe,1,acting
+Hilary Swank,Golden Globe,2023,Golden Globe,1,acting
+Emma D’Arcy,Golden Globe,2023,Golden Globe,1,acting
+Nicole Kidman,Golden Globe,2022,Golden Globe,2,acting
+Jessica Chastain,Golden Globe,2022,Golden Globe,1,acting
+Kristen Stewart,Golden Globe,2022,Golden Globe,1,acting
+Lady Gaga,Golden Globe,2022,Golden Globe,1,acting
+Olivia Colman,Golden Globe,2022,Golden Globe,1,acting
+Ariana DeBose,Golden Globe,2022,Golden Globe,2,acting
+Aunjanue Ellis,Golden Globe,2022,Golden Globe,1,acting
+Caitriona Balfe,Golden Globe,2022,Golden Globe,1,acting
+Kirsten Dunst,Golden Globe,2022,Golden Globe,1,acting
+Ruth Negga,Golden Globe,2022,Golden Globe,1,acting
+Jean Smart,Golden Globe,2022,Golden Globe,2,acting
+Tracee Ellis Ross,Golden Globe,2022,Golden Globe,1,acting
+Elle Fanning,Golden Globe,2022,Golden Globe,1,acting
+Hannah Einbinder,Golden Globe,2022,Golden Globe,1,acting
+Issa Rae,Golden Globe,2022,Golden Globe,1,acting
+Kate Winslet,Golden Globe,2022,Golden Globe,2,acting
+Cynthia Erivo,Golden Globe,2022,Golden Globe,1,acting
+Elizabeth Olsen,Golden Globe,2022,Golden Globe,1,acting
+Jessica Chastain,Golden Globe,2022,Golden Globe,1,acting
+Margaret Qualley,Golden Globe,2022,Golden Globe,1,acting
+Michaela Jaé Rodriguez,Golden Globe,2022,Golden Globe,2,acting
+Uzo Aduba,Golden Globe,2022,Golden Globe,1,acting
+Jennifer Aniston,Golden Globe,2022,Golden Globe,1,acting
+Elisabeth Moss,Golden Globe,2022,Golden Globe,1,acting
+Christine Baranski,Golden Globe,2022,Golden Globe,1,acting
+Sarah Snook,Golden Globe,2022,Golden Globe,2,acting
+Kaitlyn Dever,Golden Globe,2022,Golden Globe,1,acting
+Jennifer Coolidge,Golden Globe,2022,Golden Globe,1,acting
+Hannah Waddingham,Golden Globe,2022,Golden Globe,1,acting
+Andie MacDowell,Golden Globe,2022,Golden Globe,1,acting
+Rachel Zegler,Golden Globe,2022,Golden Globe,2,acting
+Marion Cotillard,Golden Globe,2022,Golden Globe,1,acting
+Jennifer Lawrence,Golden Globe,2022,Golden Globe,1,acting
+Emma Stone,Golden Globe,2022,Golden Globe,1,acting
+Alana Haim,Golden Globe,2022,Golden Globe,1,acting
+Zendaya,Emmys,2022,Emmys,2,acting
+Jodie Comer,Emmys,2022,Emmys,1,acting
+Laura Linney,Emmys,2022,Emmys,1,acting
+Melanie Lynskey,Emmys,2022,Emmys,1,acting
+Sandra Oh,Emmys,2022,Emmys,1,acting
+Reese Witherspoon,Emmys,2022,Emmys,1,acting
+Julia Garner,Emmys,2022,Emmys,2,acting
+Patricia Arquette,Emmys,2022,Emmys,1,acting
+Jung Ho-yeon,Emmys,2022,Emmys,1,acting
+Christina Ricci,Emmys,2022,Emmys,1,acting
+Rhea Seehorn,Emmys,2022,Emmys,1,acting
+J. Smith-Cameron,Emmys,2022,Emmys,1,acting
+Sarah Snook,Emmys,2022,Emmys,1,acting
+Sydney Sweeney,Emmys,2022,Emmys,1,acting
+Jean Smart,Emmys,2022,Emmys,2,acting
+Rachel Brosnahan,Emmys,2022,Emmys,1,acting
+Quinta Brunson,Emmys,2022,Emmys,1,acting
+Kaley Cuoco,Emmys,2022,Emmys,1,acting
+Elle Fanning,Emmys,2022,Emmys,1,acting
+Issa Rae,Emmys,2022,Emmys,1,acting
+Sheryl Lee Ralph,Emmys,2022,Emmys,2,acting
+Alex Borstein,Emmys,2022,Emmys,1,acting
+Hannah Einbinder,Emmys,2022,Emmys,1,acting
+Janelle James,Emmys,2022,Emmys,1,acting
+Kate McKinnon,Emmys,2022,Emmys,1,acting
+Sarah Niles,Emmys,2022,Emmys,1,acting
+Juno Temple,Emmys,2022,Emmys,1,acting
+Hannah Waddingham,Emmys,2022,Emmys,1,acting
+Amanda Seyfried,Emmys,2022,Emmys,2,acting
+Toni Collette,Emmys,2022,Emmys,1,acting
+Lily James,Emmys,2022,Emmys,1,acting
+Sarah Paulson,Emmys,2022,Emmys,1,acting
+Margaret Qualley,Emmys,2022,Emmys,1,acting
+Jennifer Coolidge,Emmys,2022,Emmys,2,acting
+Connie Britton,Emmys,2022,Emmys,1,acting
+Alexandra Daddario,Emmys,2022,Emmys,1,acting
+Kaitlyn Dever,Emmys,2022,Emmys,1,acting
+Natasha Rothwell,Emmys,2022,Emmys,1,acting
+Mare Winningham,Emmys,2022,Emmys,1,acting
