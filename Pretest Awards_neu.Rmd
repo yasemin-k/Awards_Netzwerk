@@ -1,0 +1,264 @@
+---
+title: "Pretest"
+author: "Golnaz Bayati, Theresa Hunker, Yasemin Karakan"
+date: "Wintersemester 25/26"
+output: html_document
+---
+
+# Setup und Lernziele
+
+**Quellen:** [GitHub](https://github.com/yasemin-k/Awards_Netzwerk) [Codebuch](https://github.com/yasemin-k/Awards_Netzwerk/blob/main/README.md) [GoogleSheets] (<https://docs.google.com/document/d/15qFXlxUdLwla2E1gVbhPPupzlWmQIqpFxPsH6baOkaE/edit?tab=t.0> )
+
+## Laden der Programmbibliotheken
+
+Netzwerk einlesen
+
+```{r setup und Netzwerk einlesen}
+
+library(igraph)
+library(dplyr)
+library(kableExtra)
+
+el <- read.csv(
+  "https://raw.githubusercontent.com/yasemin-k/Awards_Netzwerk/refs/heads/main/Pretest_neu%20_edgelist.csv",
+  header = TRUE, sep = ",", stringsAsFactors = FALSE
+)
+
+nl <- read.csv(
+  "https://raw.githubusercontent.com/yasemin-k/Awards_Netzwerk/refs/heads/main/Pretest_neu_nodelist%20(1).csv",
+  header = TRUE, sep = ",", stringsAsFactors = FALSE
+)
+
+```
+
+## Hypothesentest: GG/Emmy-Gewinn → spätere Oscar-Nominierung/-Gewinn
+
+```{r Hypothesentest}
+
+hypothese <- el %>%
+  group_by(from) %>%
+  summarise(
+    # Frühestes Emmy- oder GG-Ereignis (Nominierung ODER Gewinn)
+    first_gg_emmy_year = if (
+      any(award %in% c("Golden Globe", "Emmys"))
+    ) {
+      min(year[award %in% c("Golden Globe", "Emmys")])
+    } else NA_real_,
+
+    # Früheste Oscar-Nominierung
+    first_oscar_nom_year = if (
+      any(award == "Oscars" & weight == 1)
+    ) {
+      min(year[award == "Oscars" & weight == 1])
+    } else NA_real_,
+
+    # Frühester Oscar-Gewinn
+    first_oscar_win_year = if (
+      any(award == "Oscars" & weight == 2)
+    ) {
+      min(year[award == "Oscars" & weight == 2])
+    } else NA_real_
+  ) %>%
+  mutate(
+    gg_emmy_before_oscar_nom =
+      !is.na(first_gg_emmy_year) &
+      !is.na(first_oscar_nom_year) &
+      first_gg_emmy_year < first_oscar_nom_year,
+
+    gg_emmy_before_oscar_win =
+      !is.na(first_gg_emmy_year) &
+      !is.na(first_oscar_win_year) &
+      first_gg_emmy_year < first_oscar_win_year
+  )
+
+```
+
+## Hat GG/Emmy (ja/nein) -\> höhere Oscar Quote?
+
+```{r Verstaerkung_Basis}
+
+basis <- hypothese %>%
+  mutate(
+    prior_gg_emmy = !is.na(first_gg_emmy_year),
+    oscar_nom = !is.na(first_oscar_nom_year),
+    oscar_win = !is.na(first_oscar_win_year)
+  ) %>%
+  summarise(
+    Personen_mit_prior = sum(prior_gg_emmy, na.rm = TRUE),
+    Personen_ohne_prior = sum(!prior_gg_emmy, na.rm = TRUE),
+
+    Quote_OscarNom_mit_prior  = round(mean(oscar_nom[prior_gg_emmy], na.rm = TRUE) * 100, 1),
+    Quote_OscarNom_ohne_prior = round(mean(oscar_nom[!prior_gg_emmy], na.rm = TRUE) * 100, 1),
+
+    Quote_OscarWin_mit_prior  = round(mean(oscar_win[prior_gg_emmy], na.rm = TRUE) * 100, 1),
+    Quote_OscarWin_ohne_prior = round(mean(oscar_win[!prior_gg_emmy], na.rm = TRUE) * 100, 1)
+  )
+
+basis_vis <- data.frame(
+  Gruppe = c("Mit GG/Emmy", "Ohne GG/Emmy"),
+  Personen = c(basis$Personen_mit_prior, basis$Personen_ohne_prior),
+  Oscar_Nominierung_Prozent = c(
+    basis$Quote_OscarNom_mit_prior,
+    basis$Quote_OscarNom_ohne_prior
+  ),
+  Oscar_Gewinn_Prozent = c(
+    basis$Quote_OscarWin_mit_prior,
+    basis$Quote_OscarWin_ohne_prior
+  )
+)
+
+knitr::kable(
+  basis_vis,
+  caption = "Oscar-Erfolg mit vs. ohne vorherigen GG/Emmy",
+  align = "c"
+)
+
+
+```
+
+## Mehr GG/Emmys = höhere Oscars Quote?
+
+```{r Verstaerkung_Dosis}
+
+dose_data <- el %>%
+  group_by(from) %>%
+  summarise(
+    gg_emmy_events = sum(grepl("Golden", award) | grepl("Emmy", award), na.rm = TRUE),
+    oscar_nom = any(grepl("Oscar", award) & weight == 1),
+    oscar_win = any(grepl("Oscar", award) & weight == 2)
+  ) %>%
+  mutate(
+    gg_emmy_level = case_when(
+      gg_emmy_events == 0 ~ "0",
+      gg_emmy_events == 1 ~ "1",
+      gg_emmy_events == 2 ~ "2",
+      gg_emmy_events >= 3 ~ "3+"
+    )
+  )
+
+dose_table <- dose_data %>%
+  group_by(gg_emmy_level) %>%
+  summarise(
+    Personen = n(),
+    OscarNom_Quote = round(mean(oscar_nom, na.rm = TRUE) * 100, 1),
+    OscarWin_Quote = round(mean(oscar_win, na.rm = TRUE) * 100, 1)
+  )
+
+dose_vis <- dose_table %>%
+  rename(
+    GG_Emmy_Events = gg_emmy_level,
+    Oscar_Nominierung_Prozent = OscarNom_Quote,
+    Oscar_Gewinn_Prozent = OscarWin_Quote
+  )
+
+knitr::kable(
+  dose_vis,
+  caption = "Oscar-Erfolg nach Anzahl vorheriger GG/Emmy-Events",
+  align = "c"
+)
+
+```
+
+## Tabelle
+
+```{r Ergebnisse_Tabelle}
+
+# Nur Fälle, bei denen die Bedingung erfüllt ist (TRUE)
+ergebnisse_passend <- hypothese %>%
+  filter(gg_emmy_before_oscar_nom | gg_emmy_before_oscar_win) %>%
+  arrange(first_gg_emmy_year, first_oscar_nom_year, first_oscar_win_year)
+
+knitr::kable(ergebnisse_passend) %>%
+  kable_styling(
+    full_width = TRUE,
+    bootstrap_options = c("bordered")
+  )
+
+```
+
+## Tabelle Wahrscheinlichkeit
+
+```{r Ergebnistabelle, results='asis'}
+
+ergebnis_tabelle <- hypothese %>%
+  summarise(
+    Gesamtpersonen = n(),
+    GG_Emmy_vor_Oscar_Nominierung = sum(gg_emmy_before_oscar_nom, na.rm = TRUE),
+    GG_Emmy_vor_Oscar_Gewinn      = sum(gg_emmy_before_oscar_win, na.rm = TRUE),
+    Anteil_Nominierung_in_Prozent =
+      round(mean(gg_emmy_before_oscar_nom, na.rm = TRUE) * 100, 1),
+    Anteil_Gewinn_in_Prozent =
+      round(mean(gg_emmy_before_oscar_win, na.rm = TRUE) * 100, 1)
+  )
+
+knitr::kable(
+  basis_vis,
+  caption = "Oscar-Erfolg mit vs. ohne vorherigen GG/Emmy",
+  align = "c"
+)
+
+```
+
+## Filter einbauen
+
+```{r Filter}
+# Filter einbauen (um Filter auszublenden, einfach Hashtag davor einfügen)
+
+nl_pretest <- nl %>%
+  filter(
+    type == "Person",
+    sex == "female",
+   # year_of_birth >= 1980, #(> = größer als , >= = größer-gleich < = kleiner als, <= = kleiner-gleich )
+    ethnicity == "White"
+  )
+
+el_pretest <- el %>%
+  filter(
+    award %in% c("Oscars", "Emmys", "Golden Globe"),
+    category == "acting",
+   # year >= 2000,
+    weight == 2
+  )
+
+# Zuordnung herstellen: nur Kanten behalten, deren Person im nl_pretest ist
+
+el_pretest <- el_pretest %>%
+  filter(from %in% nl_pretest$id)
+
+```
+
+## Netzwerk erstellen
+
+```{r Netzwerk erstellen}
+
+# Award-Knoten aus der Nodelist ergänzen (die in el_pretest$to vorkommen)
+nl_awards <- nl %>%
+  filter(id %in% unique(el_pretest$to))
+
+# Vertices: Personen + Awards
+nl_vertices <- bind_rows(nl_pretest, nl_awards) %>%
+  distinct(id, .keep_all = TRUE)
+
+# Netzwerk erstellen
+aw <- graph_from_data_frame(
+  d = el_pretest,
+  vertices = nl_vertices,
+  directed = TRUE
+)
+
+```
+
+## Visualisierung
+
+```{r Visualisierung Pretest, fig.height=12, fig.width=16}
+
+
+# Visualisierung
+plot(aw, # ruft das Netzwerk auf
+     asp=0,# nutzt die komplette Leinwand des Chunks
+     main="Pretest Awards",
+     edge.width=1.5 ,
+  vertex.label.cex = 0.9,
+  vertex.size = 18
+  )
+```
