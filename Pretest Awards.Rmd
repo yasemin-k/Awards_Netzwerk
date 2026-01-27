@@ -1,0 +1,48 @@
+---
+title: "Pretest"
+author: "Golnaz Bayati, Theresa Hunker, Yasemin Karakan"
+date: "Wintersemester 25/26"
+output: html_document
+---
+
+# Setup und Lernziele
+
+**Quellen:** [GitHub](https://github.com/yasemin-k/Awards_Netzwerk) [Codebuch](https://github.com/yasemin-k/Awards_Netzwerk/blob/main/README.md) [GoogleDoc] (<https://docs.google.com/document/d/15qFXlxUdLwla2E1gVbhPPupzlWmQIqpFxPsH6baOkaE/edit?tab=t.0> )
+
+## Laden der Programmbibliotheken
+
+# Netzwerk einlesen
+
+```{r setup und Netzwerk einlesen}
+
+library(igraph)
+
+el <- read.csv(
+  "https://raw.githubusercontent.com/yasemin-k/Awards_Netzwerk/refs/heads/main/egdelist.csv",
+  header = TRUE, sep = ",", stringsAsFactors = FALSE
+)
+
+nl <- read.csv(
+  "https://raw.githubusercontent.com/yasemin-k/Awards_Netzwerk/refs/heads/main/nodelist.csv",
+  header = TRUE, sep = ",", stringsAsFactors = FALSE
+)
+
+aw <- graph_from_data_frame(
+  d = el,
+  vertices = nl,
+  directed = TRUE
+)
+
+aw
+
+```
+
+# Visualisierung
+
+```{r Visualisierung Anne Will, fig.height=9, fig.width=12}
+
+# Visualisierung
+plot(aw, # ruft das Netzwerk auf
+     asp=0,# nutzt die komplette Leinwand des Chunks
+     main="Pretest Awards")
+```
