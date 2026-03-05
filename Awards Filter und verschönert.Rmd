@@ -1,0 +1,209 @@
+---
+title: "Pretest"
+author: "Golnaz Bayati, Theresa Hunker, Yasemin Karakan"
+date: "Wintersemester 25/26"
+output: html_document
+---
+
+# Setup
+
+## Pakete laden
+
+```{r pakete}
+library(igraph)
+library(dplyr)
+library(kableExtra)
+library(tidygraph)
+```
+
+## Daten einlesen
+
+```{r daten_einlesen}
+el <- read.csv(
+  "https://raw.githubusercontent.com/yasemin-k/Awards_Netzwerk/refs/heads/main/Awards_Edgelist.csv",
+  header = TRUE, sep = ",", stringsAsFactors = FALSE
+)
+
+nl <- read.csv(
+  "https://raw.githubusercontent.com/yasemin-k/Awards_Netzwerk/refs/heads/main/Awards_Nodelist.csv",
+  header = TRUE, sep = ",", stringsAsFactors = FALSE
+)
+```
+
+# Hypothesentest
+
+## Berechnung der Award-Reihenfolge
+
+```{r hypothese_berechnen}
+hypothese <- el %>%
+  group_by(from) %>%
+  summarise(
+    first_gg_emmy_year = if (any(award %in% c("Golden Globe", "Emmys"))) {
+      min(year[award %in% c("Golden Globe", "Emmys")])
+    } else NA_real_,
+
+    first_oscar_nom_year = if (any(award == "Oscars" & weight == 1)) {
+      min(year[award == "Oscars" & weight == 1])
+    } else NA_real_,
+
+    first_oscar_win_year = if (any(award == "Oscars" & weight == 2)) {
+      min(year[award == "Oscars" & weight == 2])
+    } else NA_real_
+  ) %>%
+  mutate(
+    gg_emmy_before_oscar_nom =
+      !is.na(first_gg_emmy_year) &
+      !is.na(first_oscar_nom_year) &
+      first_gg_emmy_year < first_oscar_nom_year,
+
+    gg_emmy_before_oscar_win =
+      !is.na(first_gg_emmy_year) &
+      !is.na(first_oscar_win_year) &
+      first_gg_emmy_year < first_oscar_win_year
+  )
+```
+
+# Tabellen der Ergebnisse
+
+## Personen, bei denen GG/Emmy vor Oscar liegt
+
+```{r trefferliste}
+ergebnisse_passend <- hypothese %>%
+  filter(gg_emmy_before_oscar_nom | gg_emmy_before_oscar_win) %>%
+  arrange(first_gg_emmy_year)
+
+knitr::kable(ergebnisse_passend) %>%
+  kable_styling(
+    full_width = TRUE,
+    bootstrap_options = c("bordered")
+  )
+```
+
+## Zusammenfassung der Hypothese
+
+```{r hypothese_zusammenfassung}
+ergebnis_tabelle <- hypothese %>%
+  summarise(
+    Gesamtpersonen = n(),
+    GG_Emmy_vor_Oscar_Nominierung = sum(gg_emmy_before_oscar_nom, na.rm = TRUE),
+    GG_Emmy_vor_Oscar_Gewinn = sum(gg_emmy_before_oscar_win, na.rm = TRUE),
+    Anteil_Nominierung_in_Prozent =
+      round(mean(gg_emmy_before_oscar_nom, na.rm = TRUE) * 100, 1),
+    Anteil_Gewinn_in_Prozent =
+      round(mean(gg_emmy_before_oscar_win, na.rm = TRUE) * 100, 1)
+  )
+
+knitr::kable(
+  ergebnis_tabelle,
+  caption = "Hypothesentest: GG/Emmy vor späterer Oscar-Nominierung bzw. Gewinn",
+  align = "c"
+)
+```
+
+# Netzwerk
+
+## Filter für Visualisierung
+
+```{r filter}
+nl_pretest <- nl %>%
+  filter(
+    type == "Person",
+    sex == "female",
+    ethnicity == "White"
+  )
+
+el_all <- el %>%
+  filter(
+    award %in% c("Oscars","Emmys","Golden Globe"),
+    category == "acting",
+    weight %in% c(1,2)
+  ) %>%
+  filter(from %in% nl_pretest$id)
+
+el_win <- el %>%
+  filter(
+    award %in% c("Oscars","Emmys","Golden Globe"),
+    category == "acting",
+    weight == 2
+  ) %>%
+  filter(from %in% nl_pretest$id)
+```
+
+## Netzwerk erstellen
+
+```{r netzwerk_erstellen}
+nl_awards_all <- nl %>% filter(id %in% unique(el_all$to))
+nl_vertices_all <- bind_rows(nl_pretest, nl_awards_all) %>%
+  distinct(id,.keep_all=TRUE)
+
+aw_all <- graph_from_data_frame(
+  d = el_all,
+  vertices = nl_vertices_all,
+  directed = TRUE
+)
+
+E(aw_all)$color <- ifelse(E(aw_all)$weight == 2,"red","grey")
+E(aw_all)$lty <- ifelse(E(aw_all)$weight == 2,1,2)
+E(aw_all)$width <- ifelse(E(aw_all)$weight == 2,2.5,1.2)
+```
+
+## tidygraph Objekt (für Abgabe)
+
+```{r tidygraph_objekt}
+aw_tbl <- as_tbl_graph(aw_all)
+aw_tbl
+```
+
+# Visualisierung
+
+## Nominierungen + Gewinne
+
+```{r visualisierung_all, fig.height=10, fig.width=14}
+plot(
+  aw_all,
+  layout = layout_with_fr,
+  asp = 0,
+  main = "Awards Netzwerk (Nominierungen und Gewinne)",
+  vertex.label.cex = 0.8,
+  vertex.size = 18,
+  edge.color = E(aw_all)$color,
+  edge.lty = E(aw_all)$lty,
+  edge.width = E(aw_all)$width
+)
+
+legend(
+  "topleft",
+  legend = c("Nominierung","Gewinn"),
+  lty = c(2,1),
+  lwd = c(1,2.5),
+  col = c("grey","red"),
+  bty = "n"
+)
+```
+
+## Nur Gewinner
+
+```{r visualisierung_gewinner, fig.height=10, fig.width=14}
+nl_awards_win <- nl %>% filter(id %in% unique(el_win$to))
+nl_vertices_win <- bind_rows(nl_pretest, nl_awards_win) %>%
+  distinct(id,.keep_all=TRUE)
+
+aw_win <- graph_from_data_frame(
+  d = el_win,
+  vertices = nl_vertices_win,
+  directed = TRUE
+)
+
+plot(
+  aw_win,
+  layout = layout_with_fr,
+  asp = 0,
+  main = "Awards Netzwerk (nur Gewinner)",
+  vertex.label.cex = 0.8,
+  vertex.size = 18,
+  edge.color = "red",
+  edge.width = 2
+)
+```
+
+# Ende
